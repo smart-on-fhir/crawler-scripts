@@ -1,0 +1,32 @@
+# Change these values to match your own environment
+
+# Command to use for your local python
+PYTHON=python3
+
+# Where to keep downloaded FHIR data (relative to project dir)
+DATA_DIR=data
+
+# EHR FHIR root (e.g. https://example.com/api/FHIR/R4)
+FHIR_URL=
+
+# EHR OAuth URL (e.g. https://example.com/oauth2/token)
+TOKEN_URL=
+
+# EHR client ID and a path to the private client JWKS auth key file
+CLIENT_ID=
+JWKS_PATH=
+
+# The code system for your MRN Patient identifiers
+# Leave blank to search all identifiers regardless of system
+MRN_SYSTEM=
+
+# Observation query flags. Observation is the largest resource by far
+# and usually needs some winnowing down. Our usual approach is to
+# search just for the nine standard HL7 categories.
+# You might think we'd just do a search for the HL7 system (using the
+# "category=SYSTEM|" syntax), but EHR support for that seems limited.
+OBSERVATION_QUERY=category=social-history,vital-signs,imaging,laboratory,procedure,survey,exam,therapy,activity
+# Are you an Epic customer? You should use this next line, which removes
+# procedure, therapy, and activity because Epic does not support those and
+# will error out on you. (As of May 2025 anyway.)
+# OBSERVATION_QUERY=category=social-history,vital-signs,imaging,laboratory,survey,exam

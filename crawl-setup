@@ -1,0 +1,14 @@
+#!/bin/sh
+#SBATCH --partition=bch-compute,bch-compute-pe
+#SBATCH --output=logs/%x.log
+#SBATCH --nodes=1
+#SBATCH --mem=1G
+#SBATCH --time=1-00
+
+set -e
+cd $(dirname "$0")
+
+./bin/setup-venv.sh
+./bin/setup-crawler.sh
+
+echo "All setup is done!"

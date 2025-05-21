@@ -1,0 +1,11 @@
+/config
+/data/
+/fhir-crawler/
+/ids/**
+!/ids/.gitkeep
+/logs/
+/scratch/
+/venv/
+/wip/
+/.npm/
+/.nvmrc

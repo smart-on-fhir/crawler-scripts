@@ -1,0 +1,24 @@
+#!/bin/sh
+#SBATCH --partition=bch-compute,bch-compute-pe
+#SBATCH --output=logs/%x.log
+#SBATCH --nodes=1
+#SBATCH --mem=1G
+#SBATCH --time=1-00
+
+set -e
+cd $(dirname "$0")
+
+G=$1
+if [ -z "$G" ]; then
+  echo "You must provide a group name"
+  exit 1
+fi
+
+RES=$2
+if [ -z "$RES" ]; then
+  ./bin/crawl-group.sh $G
+else
+  ./bin/crawl-res.sh $G $RES
+fi
+
+echo "All done!"
