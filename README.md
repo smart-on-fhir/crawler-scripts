@@ -19,7 +19,7 @@ or Observation group members).
 - Clone this repo and `cd` into it
 - `cp .config.defaults config`
 - Edit `config` to match your environment
-- `./crawl-setup` (sets up a venv and download fhir-crawler, all in-folder)
+- `./crawl-setup` (sets up a venv and downloads fhir-crawler, all in-folder)
 
 ## Running
 
