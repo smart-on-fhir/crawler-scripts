@@ -36,7 +36,7 @@ do_crawl() {
 
   if [ "$RES" = "Patient" ]; then
     cp -u ids/$G $OUT/..
-    PATIENT_FILE=$OUT/../$G
+    PATIENT_FILE=../$G
   else
     zcat $DATA_DIR/$G/Patient/Patient.ndjson.gz > $OUT/patients.ndjson
     PATIENT_FILE=patients.ndjson
