@@ -67,6 +67,6 @@ parser.add_argument("obs_folder", metavar="DIR")
 args = parser.parse_args()
 
 if not os.path.exists(args.dx_folder):
-  sys.exit("No dxreport folder - crawl DiagnosticReport first")
+  sys.exit(f"No dxreport folder '{args.dx_folder}' - crawl DiagnosticReport first")
 
 asyncio.run(iterate(args.dx_folder, args.obs_folder))

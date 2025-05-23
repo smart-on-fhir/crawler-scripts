@@ -64,7 +64,7 @@ do_crawl() {
   elif [ "$RES" = "DocumentReference" ]; then
     ./bin/inline.sh $OUT
   elif [ "$RES" = "Observation" ]; then
-    ./bin/dxresult-crawl.sh $FINAL/../DiagnosticReport $OUT
+    ./bin/dxresult-crawl.sh $DATA_DIR/$G/DiagnosticReport $OUT
     ./bin/member-crawl.sh $OUT
   fi
 
